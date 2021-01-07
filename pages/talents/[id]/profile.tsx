@@ -1,5 +1,5 @@
 import { gql, useQuery } from '@apollo/client';
-import { GetStaticPaths, GetStaticProps } from 'next';
+// import { GetStaticPaths, GetStaticProps } from 'next';
 import { Button } from '../../../components/buttons';
 import { Layout } from '../../../containers/layout';
 import { ModalType, PageProps } from '../../../lib/types';
@@ -124,25 +124,25 @@ const ProfilePage = ({ id, t }: ProfilePageProps): React.ReactElement => {
   );
 };
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  return {
-    paths: [
-      {
-        params: {
-          id: 'yasbiuycdbucoiuscboiucsiousc!@',
-        },
-      },
-    ],
-    fallback: false,
-  };
-};
+// export const getStaticPaths: GetStaticPaths = async () => {
+//   return {
+//     paths: [
+//       {
+//         params: {
+//           id: 'yasbiuycdbucoiuscboiucsiousc!@',
+//         },
+//       },
+//     ],
+//     fallback: false,
+//   };
+// };
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
-  return {
-    props: {
-      id: params?.id,
-    },
-  };
-};
+// export const getStaticProps: GetStaticProps = async ({ params }) => {
+//   return {
+//     props: {
+//       id: params?.id,
+//     },
+//   };
+// };
 
 export default withTranslation('common')(ProfilePage);
