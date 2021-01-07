@@ -37,7 +37,9 @@ function MyApp({ Component, pageProps }: AppProps): React.ReactElement {
   );
 }
 
-MyApp.getInitialProps = async (appContext: AppContextType<Router>) =>
-  await App.getInitialProps(appContext);
+MyApp.getInitialProps = async (appContext: AppContextType<Router>) => {
+  const appProps = await App.getInitialProps(appContext)
+  return { ...appProps }
+}
 
 export default appWithTranslation(MyApp);
